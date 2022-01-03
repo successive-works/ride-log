@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./bootstrap-5_1_3.css">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+</head>
+
+<!--
+  attribute: inputmode: instruct the browser which type of onscreen keyboard to display
+  https://css-tricks.com/everything-you-ever-wanted-to-know-about-inputmode/#decimal
+  https://css-tricks.com/better-form-inputs-for-better-mobile-user-experiences/#why-should-i-care-about-inputmode
+
+  attribute: autocomplete: instruct the browser which type of information expected in the field
+  https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill-field
+-->
+
+<body>
+  <!--
+    input: attributes: minlength maxlength size
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text
+    
+    flex: justify content
+    https://getbootstrap.com/docs/5.1/utilities/flex/#justify-content
+
+    forms: form control form-control-sm text-center: use small size
+    https://getbootstrap.com/docs/5.1/forms/form-control/#sizing
+
+    forms: accessability
+    https://getbootstrap.com/docs/5.1/forms/overview/#accessibility
+    
+    .text-center: text utility to control the alignment
+    https://getbootstrap.com/docs/5.1/utilities/text/#text-alignment
+    
+    .g-0: for an edge-to-edge design
+    https://getbootstrap.com/docs/5.1/layout/gutters/#no-gutters
+    
+    .mt-3 .mb-0: _m_argin _t_op _b_ottom - _size_
+    https://getbootstrap.com/docs/5.1/utilities/spacing/#margin-and-padding
+
+    .row: align the form fields in grid layout (row - col)
+    https://getbootstrap.com/docs/5.1/forms/layout/#form-grid
+
+    accessibilty: labels: aria-label vs. aria-labelledby
+    https://www.w3.org/WAI/tutorials/forms/labels/
+  -->
+  <div class="d-flex flex-row justify-content-center m-2">
+    <div></div>
+    <div class="text-center">
+      <label for="date_YYYY_MM_DD" class="form-label mt-1 mb-0">Date</label>
+      <div class="d-flex" id="date_YYYY_MM_DD">
+        <input type="text" class="form-control form-control-sm text-center" id="date_1000_00_00" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="date four-digit year thousand digit">
+        <input type="text" class="form-control form-control-sm text-center" id="date_0100_00_00" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="date four-digit year century digit">
+        <input type="text" class="form-control form-control-sm text-center" id="date_0010_00_00" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="date four-digit year tenth digit">
+        <input type="text" class="form-control form-control-sm text-center" id="date_0001_00_00" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="date four-digit year unit digit">
+        <div class="text-center mx-1">-</div>
+        <input type="text" class="form-control form-control-sm text-center" id="date_0000_10_00" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="date two-digit month tenth digit">
+        <input type="text" class="form-control form-control-sm text-center" id="date_0000_01_00" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="date two-digit month unit digit">
+        <div class="text-center mx-1">-</div>
+        <input type="text" class="form-control form-control-sm text-center" id="date_0000_00_10" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="date two-digit day tenth digit">
+        <input type="text" class="form-control form-control-sm text-center" id="date_0000_00_01" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="date two-digit day unit digit">
+      </div>
+    </div>
+    <div></div>
+  </div>
+  <div class="d-flex flex-row justify-content-center m-2">
+    <div></div>
+    <div class="text-center">
+      <label for="time_hh_mm" class="form-label mt-1 mb-0">Time</label>
+      <div class="d-flex" id="time_hh_mm">
+        <input type="text" class="form-control form-control-sm text-center" id="time_10_00" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="time two-digit hour tenth digit">
+        <input type="text" class="form-control form-control-sm text-center" id="time_01_00" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="time two-digit hour unit digit">
+        <div class="text-center mx-1">:</div>
+        <input type="text" class="form-control form-control-sm text-center" id="time_00_10" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="time two-digit minute tenth digit">
+        <input type="text" class="form-control form-control-sm text-center" id="time_00_01" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="time two-digit minute unit digit">
+      </div>
+    </div>
+    <div></div>
+  </div>
+  <div class="d-flex flex-row justify-content-center m-2">
+    <div></div>
+    <div class="text-center">
+      <label for="distance" class="form-label mt-1 mb-0">Kilometer</label>
+      <div class="d-flex" id="distance">
+        <input type="text" class="form-control form-control-sm text-center" id="distance_100000" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="6-digit distance 100-thousand digit">
+        <input type="text" class="form-control form-control-sm text-center" id="distance_010000" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="6-digit distance 10-thousand digit">
+        <input type="text" class="form-control form-control-sm text-center" id="distance_001000" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="6-digit distance 1-thousand digit">
+        <input type="text" class="form-control form-control-sm text-center" id="distance_000100" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="6-digit distance 1-hundred digit">
+        <input type="text" class="form-control form-control-sm text-center" id="distance_000010" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="6-digit distance tenth digit">
+        <input type="text" class="form-control form-control-sm text-center" id="distance_000001" inputmode="decimal" minlength="1" maxlength="1" size="1" aria-label="6-digit distance unit digit">
+      </div>
+    </div>
+    <div></div>
+  </div>
+  <div class="d-flex flex-row justify-content-center m-2">
+    <div></div>
+    <div class="text-center">
+      <label for="locations" class="form-label mt-1 mb-0">Location</label>
+      <input class="form-control" list="datalistOptions" id="locations" placeholder="Type to search...">
+      <datalist id="datalistOptions">
+        <option value="Home">
+        <option value="Work">
+        <option value="Parents">
+        <option value="City">
+        <option value="Shopping">
+      </datalist>
+    </div>
+  </div>
+  <div class="d-flex flex-row justify-content-center m-2">
+    <button type="button" class="btn btn-success">Start</button>
+  </div>
+  <div id="result" class="text-center m-3">
+
+  </div>
+  <!-- <div class="row text-center g-0 bg-danger">
+    <label for="date_YYYY_MM_DD" class="form-label mt-3 mb-0">Date</label>
+    <div class="col-2">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="date_1000_00_00" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="date_0100_00_00" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="date_0010_00_00" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="date_0001_00_00" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col">
+      -
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="date_0000_10_00" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="date_0000_01_00" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col">
+      -
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="date_0000_00_10" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="date_0000_00_01" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col-2">
+    </div>
+  </div>
+  <div class="row text-center g-0 bg-danger opacity-75">
+    <label for="time_hh_mm" class="form-label mt-3 mb-0">Time</label>
+    <div class="col-4"></div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="time_10_00" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="time_01_00" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col">
+      :
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="time_00_10" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control form-control-sm text-center" id="time_00_01" inputmode="decimal" minlength="1" maxlength="1" size="1">
+    </div>
+    <div class="col-4"></div>
+  </div>
+  <div class="d-flex align-items-center flex-column bg-warning" style="height: 60vh;">
+    <div class="mt-auto">
+      Hello
+    </div>
+  </div> -->
+</body>
+<script src="./bootstrap-5_1_3.bundle.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+<!-- 
+  JavaScript Date Functions
+  getFullYear: returns the year according to local time
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear
+
+  getMonth: returns the month according to local time (zero-based value, i.e. 0 indicates the first month of the year)
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth
+
+  getDate: returns the day of the month according to local time
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate
+
+  getHours: returns the hour according to local time
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours
+
+  getMinutes: returns the minutes according to local time
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes
+
+  Intl.DateTimeFormat
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+
+  https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Strings
+
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+
+  https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods
+
+ -->
+<script>
+  var DateTimeStart = new Date(); //  console.log(DateTimeStart);
+  var DateYearStart = DateTimeStart.getFullYear(); //  console.log(DateYearStart);
+  document.getElementById("date_1000_00_00").value = DateYearStart.toString().slice(0, 1); //  console.log(StartDate1000);
+  document.getElementById("date_0100_00_00").value = DateYearStart.toString().slice(1, 2); //  console.log(StartDate0100);
+  document.getElementById("date_0010_00_00").value = DateYearStart.toString().slice(2, 3); //  console.log(StartDate0010);
+  document.getElementById("date_0001_00_00").value = DateYearStart.toString().slice(3, 4); //  console.log(StartDate0001);
+  var DateMonthStart = DateTimeStart.getMonth() + 1; // console.log(DateMonthStart);
+  function checkMonthDoubleDigit() {
+    if (DateMonthStart < 10) {
+      document.getElementById("date_0000_10_00").value = "0";
+      document.getElementById("date_0000_01_00").value = DateMonthStart.toString();
+    } else {
+      document.getElementById("date_0000_10_00").value = DateMonthStart.toString().slice(0, 1);
+      document.getElementById("date_0000_01_00").value = DateMonthStart.toString().slice(1, 2);
+    }
+  }
+  checkMonthDoubleDigit();
+  var DateDayStart = DateTimeStart.getDate(); //  console.log(DateDayStart);
+  function checkDayDoubleDigit() {
+    if (DateMonthStart < 10) {
+      document.getElementById("date_0000_00_10").value = "0";
+      document.getElementById("date_0000_00_01").value = DateDayStart.toString();
+    } else {
+      document.getElementById("date_0000_00_10").value = DateDayStart.toString().slice(0, 1);
+      document.getElementById("date_0000_00_01").value = DateDayStart.toString().slice(1, 2);
+    }
+  }
+  checkDayDoubleDigit();
+  // fill input fields for hours and minutes - possibly refactor above 'duplicate' code for checking of double digits
+  var TimeHoursStart = DateTimeStart.getHours();
+  console.log(TimeHoursStart);
+  var TimeMinutesStart = DateTimeStart.getMinutes();
+  console.log(TimeMinutesStart);
+  var StartKilometers;
+  var StartLocation;
+  document.getElementById("result").innerHTML = "Start Date" + "; " + "Start Time" + "; " + "Start Kilometers" + "; " + "Start Location";
+</script>
+
+</html>
